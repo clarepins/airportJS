@@ -1,8 +1,10 @@
 describe('Airport', function() {
+
+planeSpy = jasmine.createSpy('plane');
+
   it('can land a plane', function() {
     airport = new Airport();
-    plane = new Plane();
-    airport.land(plane)
-    expect(airport.planes()).toContain(plane)
+    airport.land(planeSpy);
+    expect(airport.planes).toContain(planeSpy);
   });
 });
